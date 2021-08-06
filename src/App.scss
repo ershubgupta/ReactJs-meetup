@@ -1,0 +1,25 @@
+.meetup {
+  .form-container {
+    max-width: 550px;
+    padding: 2rem;
+    box-shadow: 0 0 4px 2px #b8b8b85e;
+    .form-group,
+    .form-control,
+    .form-label {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  footer {
+    .container {
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: column;
+      .navbar-nav {
+        margin-left: 0 !important;
+      }
+    }
+  }
+}
