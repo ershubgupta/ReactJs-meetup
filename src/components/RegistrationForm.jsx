@@ -31,7 +31,6 @@ export default function RegistrationForm() {
   };
 
   const onChange = (e) => {
-    console.log(e.target.value);
     setFormData({ ...formData, [e.target.name]: e.target.value });
     let btnActive = true;
     Array.from(document.getElementsByClassName("form-control")).forEach(
@@ -56,13 +55,13 @@ export default function RegistrationForm() {
         when={formIsHalfFilledOut.length !== 0 ? true : false}
         message={`Are you sure you want to leave?`}
       />
-      <div className="form-container mx-auto">
-        {formMessage.length > 0 ? (
-          <Alert variant="success">
-            <Alert.Heading>Hey, nice to see you</Alert.Heading>
-            <p>{formMessage}</p>
-          </Alert>
-        ) : (
+      {formMessage.length > 0 ? (
+        <Alert variant="success" style={{maxWidth: "600px"}} className="mx-auto">
+          <Alert.Heading>Hey, nice to see you</Alert.Heading>
+          <p>{formMessage}</p>
+        </Alert>
+      ) : (
+        <div className="form-container mx-auto">
           <Form
             onSubmit={onSubmit}
             autoComplete="off"
@@ -73,7 +72,7 @@ export default function RegistrationForm() {
               Register yourself for upcoming{" "}
               <span className="text-success">ReactJs MeetUp</span>
             </h5>
-            
+
             <InputFields
               label={"Your Full Name:"}
               name={"name"}
@@ -148,8 +147,8 @@ export default function RegistrationForm() {
               Submit
             </Button>
           </Form>
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
 }
