@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Alert, Button, Form, Spinner } from "react-bootstrap";
 import { Prompt } from "react-router-dom";
+import { InputFields, SelectFields } from "./FromFields";
 
 export default function RegistrationForm() {
   const [formData, setFormData] = useState([]); // for storing form data
@@ -30,6 +31,7 @@ export default function RegistrationForm() {
   };
 
   const onChange = (e) => {
+    console.log(e.target.value);
     setFormData({ ...formData, [e.target.name]: e.target.value });
     let btnActive = true;
     Array.from(document.getElementsByClassName("form-control")).forEach(
@@ -71,70 +73,63 @@ export default function RegistrationForm() {
               Register yourself for upcoming{" "}
               <span className="text-success">ReactJs MeetUp</span>
             </h5>
-            <Form.Group>
-              <Form.Label>Your Full Name:</Form.Label>
-              <Form.Control
-                name="name"
-                type="text"
-                onChange={onChange}
-                placeholder="Enter Your Name"
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label>Your Age:</Form.Label>
-              <Form.Control
-                name="age"
-                type="number"
-                onChange={onChange}
-                placeholder="Enter Your Age"
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label>Your Date of Birth:</Form.Label>
-              <Form.Control
-                name="dob"
-                type="date"
-                onChange={onChange}
-                placeholder="Enter Your Date of Birth"
-              />
-            </Form.Group>
-
-            <Form.Group>
-              <Form.Label>Your Profession:</Form.Label>
-              <Form.Control as="select" name="profession" onChange={onChange}>
-                <option value="">Please select from the list.</option>
-                <option value="Employed">Employed</option>
-                <option value="Student">Student</option>
-              </Form.Control>
-            </Form.Group>
-
-            <Form.Group>
-              <Form.Label>Your Locality:</Form.Label>
-              <Form.Control
-                name="locality"
-                type="text"
-                onChange={onChange}
-                placeholder="Enter Your Locality"
-              />
-            </Form.Group>
-
-            <Form.Group>
-              <Form.Label>You can bring your Guest with you:</Form.Label>
-              <Form.Control as="select" name="guest_count" onChange={onChange}>
-                <option value="">Please select the number of guest.</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-              </Form.Control>
-            </Form.Group>
-
-            <Form.Label>Your Full Address:</Form.Label>
-            <Form.Control
-              maxLength="50"
-              name="address"
-              as="textarea"
+            
+            <InputFields
+              label={"Your Full Name:"}
+              name={"name"}
+              type={"text"}
               onChange={onChange}
-              placeholder="Enter Your Address"
             />
+
+            <InputFields
+              label={"Your Age:"}
+              name={"age"}
+              type={"number"}
+              onChange={onChange}
+            />
+            <InputFields
+              label={"Your Date of Birth:"}
+              name={"dob"}
+              type={"date"}
+              onChange={onChange}
+            />
+
+            <SelectFields
+              label={"Your Profession:"}
+              name={"profession"}
+              onChange={onChange}
+              options={[
+                { value: "", label: "Please select from the list." },
+                { value: "Employed", label: "Employed" },
+                { value: "Student", label: "Student" },
+              ]}
+            />
+
+            <InputFields
+              label={"Your Locality:"}
+              name={"locality"}
+              type={"text"}
+              onChange={onChange}
+            />
+
+            <SelectFields
+              label={"You can bring your Guest with you:"}
+              name={"guest_count"}
+              onChange={onChange}
+              options={[
+                { value: "", label: "Please select the number of guest." },
+                { value: "1", label: "1" },
+                { value: "2", label: "2" },
+              ]}
+            />
+
+            <InputFields
+              label={"Your Full Address:"}
+              name={"address"}
+              as={"textarea"}
+              onChange={onChange}
+            />
+
             <Form.Text className="text-right">
               Allowed Characters: {addCount}
             </Form.Text>

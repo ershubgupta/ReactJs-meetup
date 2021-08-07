@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
 
 import userData from "../data/mock_data.json";
+import { InputFields } from "./FromFields";
 import UserDetails from "./UserDetails";
 
 export default function Dashboard() {
@@ -34,37 +35,34 @@ export default function Dashboard() {
   return (
     <>
       <Form onSubmit={onSubmit} className="row justify-content-center">
-        <Form.Group className="col-sm-6">
-          <Form.Label>Filter by Name</Form.Label>
-          <Form.Control
-            className="mb-2 mr-sm-2"
-            type="text"
-            name="search_by_name"
-            placeholder="Name"
+        <div className="col-sm-6">
+          <InputFields
+            label={"Filter by Name"}
+            name={"search_by_name"}
+            type={"text"}
             onChange={onChange}
-            ref={nameRef}
+            reff={nameRef}
+            placeholder={"Name"}
           />
-        </Form.Group>
-
-        <Form.Group className="col-sm-6">
-          <Form.Label>Filter by Locality</Form.Label>
-          <Form.Control
-            className="mb-2 mr-sm-2"
-            type="text"
-            name="search_by_locality"
-            placeholder="Locality"
+        </div>
+        <div className="col-sm-6">
+          <InputFields
+            label={"Filter by Locality"}
+            name={"search_by_locality"}
+            type={"text"}
             onChange={onChange}
-            ref={localityRef}
+            reff={localityRef}
+            placeholder={"Locality"}
           />
-        </Form.Group>
+        </div>
       </Form>
 
-      <div 
+      <div
         className="mx-auto my-4 px-4 py-4 overflow-auto h-auto"
         style={{
           boxShadow: "0 0 4px 2px #b8b8b85e",
           maxHeight: "600px",
-          maxWidth: '900px'
+          maxWidth: "900px",
         }}
       >
         <Table striped bordered hover size="sm" className="mb-0">
@@ -94,7 +92,10 @@ export default function Dashboard() {
               ))
             ) : (
               <tr>
-                <td colSpan="3" className="text-center"> No Result Found</td>
+                <td colSpan="3" className="text-center">
+                  {" "}
+                  No Result Found
+                </td>
               </tr>
             )}
           </tbody>
