@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { Pie, Bar } from "react-chartjs-2";
-import userData from "./data/mock_data.json";
+import userData from "../data/mock_data.json";
 
 const filter_getCount = (target, ele) => {
   return userData.filter((e) => e[target] === ele).length;

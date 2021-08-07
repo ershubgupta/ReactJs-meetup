@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
 
-import userData from "./data/mock_data.json";
+import userData from "../data/mock_data.json";
 import UserDetails from "./UserDetails";
 
 export default function Dashboard() {

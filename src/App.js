@@ -1,11 +1,11 @@
 import { Col, Container, Row } from "react-bootstrap";
 import {Switch, Route} from "react-router-dom";
 
-import Header from "./common/Header";
-import Footer from "./common/Footer";
-import RegistrationForm from './RegistrationForm';
-import Dashboard from './Dashboard';
-import Reports from './Reports';
+import Header from "./components/common/Header";
+import Footer from "./components/common/Footer";
+import RegistrationForm from './components/RegistrationForm';
+import Dashboard from './components/Dashboard';
+import Reports from './components/Reports';
 
 import './App.scss'
 
