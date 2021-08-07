@@ -60,14 +60,14 @@ export default function Dashboard() {
       </Form>
 
       <div 
-        className="mx-auto my-4 px-4 py-4 overflow-auto h-100"
+        className="mx-auto my-4 px-4 py-4 overflow-auto h-auto"
         style={{
           boxShadow: "0 0 4px 2px #b8b8b85e",
           maxHeight: "600px",
           maxWidth: '900px'
         }}
       >
-        <Table striped bordered hover size="sm">
+        <Table striped bordered hover size="sm" className="mb-0">
           <thead>
             <tr>
               <th>Full Name</th>
