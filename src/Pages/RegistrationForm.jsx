@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Alert, Button, Form, Spinner } from "react-bootstrap";
 import { Prompt } from "react-router-dom";
-import { InputFields, SelectFields } from "./FromFields";
+import { InputFields, SelectFields } from "../components/FromFields";
 
 export default function RegistrationForm() {
   const [formData, setFormData] = useState([]); // for storing form data

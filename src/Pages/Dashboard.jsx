@@ -2,8 +2,8 @@ import React, { useRef, useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
 
 import userData from "../data/mock_data.json";
-import { InputFields } from "./FromFields";
-import UserDetails from "./UserDetails";
+import { InputFields } from "../components/FromFields";
+import UserDetails from "../components/UserDetails";
 
 export default function Dashboard() {
   const [seeMore, setSeeMore] = useState({});

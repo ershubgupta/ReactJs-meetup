@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { Chart } from "./Charts";
+import { Chart } from "../components/Charts";
 
 export default function Reports() {
   return (

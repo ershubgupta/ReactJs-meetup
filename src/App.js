@@ -3,9 +3,9 @@ import {Switch, Route} from "react-router-dom";
 
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
-import RegistrationForm from './components/RegistrationForm';
-import Dashboard from './components/Dashboard';
-import Reports from './components/Reports';
+import RegistrationForm from './Pages/RegistrationForm';
+import Dashboard from './Pages/Dashboard';
+import Reports from './Pages/Reports';
 
 import './App.scss'
 
